@@ -1,4 +1,4 @@
-package com.kecak.enterprise;
+package com.kinnara.kecakplugins.optionsvalueformatter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,7 +14,7 @@ public class Activator implements BundleActivator {
         registrationList = new ArrayList<ServiceRegistration>();
 
         //Register plugin here
-        registrationList.add(context.registerService(OptionValueFormatter.class.getName(), new OptionValueFormatter(), null));
+        registrationList.add(context.registerService(OptionsValueFormatter.class.getName(), new OptionsValueFormatter(), null));
     }
 
     public void stop(BundleContext context) {

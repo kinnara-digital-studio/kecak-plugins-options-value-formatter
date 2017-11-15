@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.kecak.enterprise;
+package com.kinnara.kecakplugins.optionsvalueformatter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,20 +24,20 @@ import org.joget.plugin.base.PluginManager;
  *
  * @author Yonathan
  */
-public class OptionValueFormatter extends DataListColumnFormatDefault {
+public class OptionsValueFormatter extends DataListColumnFormatDefault {
 
     Map<String, String> optionMap = null;
 
     public String getName() {
-        return "Option Value Formatter";
+        return "Options Value Formatter";
     }
 
     public String getVersion() {
-        return "1.0.0";
+        return getClass().getPackage().getImplementationVersion();
     }
 
     public String getDescription() {
-        return "Format column value based on option in form";
+        return "Format column value based on options in form; Artifact ID : " + getClass().getPackage().getImplementationTitle();
     }
 
     public String format(DataList dataList, DataListColumn column, Object row, Object value) {
