@@ -4,7 +4,7 @@
     <groupId>com.kinnara.kecakplugins.optionsvalueformatter</groupId>
     <artifactId>kecak-plugins-options-value-formatter</artifactId>
     <packaging>bundle</packaging>
-    <version>5.0</version>
+    <version>1.0.0</version>
     <name>kecak-plugins-options-value-formatter</name>
     <url>http://www.joget.org</url>
     <build>

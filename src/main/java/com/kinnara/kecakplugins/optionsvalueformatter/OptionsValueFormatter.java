@@ -41,6 +41,7 @@ public class OptionsValueFormatter extends DataListColumnFormatDefault {
     }
 
     public String format(DataList dataList, DataListColumn column, Object row, Object value) {
+        boolean emptyIfNotFound = "true".equalsIgnoreCase(getPropertyString("emptyIfNotFound"));
         String result = "";
         if (value != null) {
             String[] values = value.toString().split(";");
@@ -50,7 +51,7 @@ public class OptionsValueFormatter extends DataListColumnFormatDefault {
                     results.add(this.getOptionMap().get(v));
                     continue;
                 }
-                results.add(v);
+                results.add(emptyIfNotFound ? "" : v);
             }
             result = this.join(results, (String) ", ");
         }
