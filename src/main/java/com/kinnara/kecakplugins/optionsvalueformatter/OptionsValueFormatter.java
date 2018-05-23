@@ -5,11 +5,6 @@
  */
 package com.kinnara.kecakplugins.optionsvalueformatter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import org.joget.apps.app.service.AppUtil;
 import org.joget.apps.datalist.model.DataList;
 import org.joget.apps.datalist.model.DataListColumn;
@@ -20,6 +15,8 @@ import org.joget.apps.form.model.FormRow;
 import org.joget.apps.form.model.FormRowSet;
 import org.joget.plugin.base.PluginManager;
 
+import java.util.*;
+
 /**
  *
  * @author Yonathan
@@ -28,18 +25,22 @@ public class OptionsValueFormatter extends DataListColumnFormatDefault {
 
     Map<String, String> optionMap = null;
 
+    @Override
     public String getName() {
         return "Options Value Formatter";
     }
 
+    @Override
     public String getVersion() {
         return getClass().getPackage().getImplementationVersion();
     }
 
+    @Override
     public String getDescription() {
         return "Format column value based on options in form; Artifact ID : " + getClass().getPackage().getImplementationTitle();
     }
 
+    @Override
     public String format(DataList dataList, DataListColumn column, Object row, Object value) {
         boolean emptyIfNotFound = "true".equalsIgnoreCase(getPropertyString("emptyIfNotFound"));
         String result = "";

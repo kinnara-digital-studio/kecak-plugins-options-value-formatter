@@ -1,35 +1,20 @@
 [
     {
         title : '@@option.value.title@@',
-        properties : [{
-            name : 'options',
-            label : '@@option.value.options@@',
-            type : 'grid',
-            columns : [{
-                key : 'value',
-                label : '@@option.value.value@@'
+        properties : [
+            {
+                name : 'options',
+                label : '@@option.value.options@@',
+                type : 'grid',
+                columns : [{
+                    key : 'value',
+                    label : '@@option.value.value@@'
+                },
+                {
+                    key : 'label',
+                    label : '@@option.value.label@@'
+                }]
             },
-            {
-                key : 'label',
-                label : '@@option.value.label@@'
-            }]
-        }]
-    },
-    {
-        title : '@@option.value.optionBinderTitle@@',
-        properties : [
-            {
-                name : 'optionsBinder',
-                label : '@@option.value.optionsBinder@@',
-                type : 'elementselect',
-                options_ajax : '[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormLoadOptionsBinder',
-                url : '[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions'
-            }
-        ]
-    },
-    {
-        title : '@@option.value.others@@',
-        properties : [
             {
                 name : 'emptyIfNotFound',
                 label : '@@option.value.emptyIfNotFound@@',
@@ -40,6 +25,18 @@
                         label : ''
                     }
                 ]
+            }
+        ]
+    },
+    {
+        title : '@@option.value.optionBinderTitle@@',
+        properties : [
+            {
+                name : 'optionsBinder',
+                label : '@@option.value.optionsBinder@@',
+                type : 'elementselect',
+                options_ajax : '[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.form.model.FormLoadOptionsBinder',
+                url : '[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions'
             }
         ]
     }
