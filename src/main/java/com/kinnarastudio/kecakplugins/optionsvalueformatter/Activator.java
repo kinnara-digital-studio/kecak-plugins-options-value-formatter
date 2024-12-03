@@ -1,4 +1,4 @@
-package com.kinnara.kecakplugins.optionsvalueformatter;
+package com.kinnarastudio.kecakplugins.optionsvalueformatter;
 
 import java.util.ArrayList;
 import java.util.Collection;

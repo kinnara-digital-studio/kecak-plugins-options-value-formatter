@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.kinnara.kecakplugins.optionsvalueformatter;
+package com.kinnarastudio.kecakplugins.optionsvalueformatter;
 
 import org.joget.apps.app.service.AppUtil;
 import org.joget.apps.datalist.model.DataList;
