@@ -88,18 +88,17 @@ public class OptionsValueFormatter extends DataListColumnFormatDefault {
     }
 
     public String getPropertyOptions() {
-        return AppUtil.readPluginResource((String) this.getClass().getName(), (String) "/properties/optionValueFormatter.json", (Object[]) null, true, "messages/optionValueFormatter");
+        return AppUtil.readPluginResource(this.getClass().getName(), "/properties/optionValueFormatter.json", null, true, "messages/optionValueFormatter");
     }
 
     protected Map<String, String> getOptionMap() {
         FormBinder optionBinder;
-        PluginManager pluginManager;
-        Object[] options;
         if (this.optionMap != null) {
             return this.optionMap;
         }
+
         this.optionMap = new HashMap();
-        for (Object o : options = (Object[]) this.getProperty("options")) {
+        for (Object o : (Object[]) this.getProperty("options")) {
             HashMap option = (HashMap) o;
             Object value = option.get("value");
             Object label = option.get("label");
@@ -109,7 +108,7 @@ public class OptionsValueFormatter extends DataListColumnFormatDefault {
             this.optionMap.put(value.toString(), label.toString());
         }
         Map optionsBinderProperties = (Map) this.getProperty("optionsBinder");
-        if (optionsBinderProperties != null && optionsBinderProperties.get("className") != null && !optionsBinderProperties.get("className").toString().isEmpty() && (optionBinder = (FormBinder) (pluginManager = (PluginManager) AppUtil.getApplicationContext().getBean("pluginManager")).getPlugin(optionsBinderProperties.get("className").toString())) != null) {
+        if (optionsBinderProperties != null && optionsBinderProperties.get("className") != null && !optionsBinderProperties.get("className").toString().isEmpty() && (optionBinder = (FormBinder) ((PluginManager) AppUtil.getApplicationContext().getBean("pluginManager")).getPlugin(optionsBinderProperties.get("className").toString())) != null) {
             optionBinder.setProperties((Map) optionsBinderProperties.get("properties"));
             FormRowSet rowSet = ((FormLoadBinder) optionBinder).load(null, null, null);
             if (rowSet != null) {
